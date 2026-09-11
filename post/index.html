@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ouverture de Braincell...</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 60px 20px;
+      background: #fff;
+      color: #000;
+      margin: 0;
+    }
+    h1 { font-size: 22px; margin-bottom: 12px; font-weight: 700; }
+    p { color: #666; font-size: 15px; line-height: 1.5; }
+    .btn {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 14px 28px;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .logo { font-size: 56px; margin-bottom: 16px; }
+  </style>
+  <script>
+    window.onload = function() {
+      var parts = window.location.pathname.split('/');
+      var postId = parts[parts.length - 1];
 
+      if (!postId || postId === 'post' || postId === '') {
+        document.body.innerHTML =
+          '<div class="logo">🧠</div>' +
+          '<h1>Lien invalide</h1>' +
+          '<p>Ce lien ne contient pas de post.</p>';
+        return;
+      }
+
+      var appLink = 'braincell://post/' + postId;
+      window.location.href = appLink;
+
+      setTimeout(function() {
+        document.body.innerHTML =
+          '<div class="logo">🧠</div>' +
+          '<h1>Braincell</h1>' +
+          '<p>L\'application n\'est pas installée sur cet appareil.</p>' +
+          '<a class="btn" href="' + appLink + '">Réessayer</a>';
+      }, 1500);
+    };
+  </script>
+</head>
+<body>
+  <div class="logo">🧠</div>
+  <h1>Ouverture de Braincell...</h1>
+  <p>Un instant...</p>
+</body>
+</html>
