@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.productivity.braincell.braincell",
+      "sha256_cert_fingerprints": [
+        "SHA-256: 1F:1A:C5:08:62:BF:8B:83:4C:4E:3A:76:B8:53:B7:75:D1:B3:C1:0B:33:E3:F3:94:F5:70:69:9A:4E:26:1C:76"
+      ]
+    }
+  }
+]
